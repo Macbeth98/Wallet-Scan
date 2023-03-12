@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["mongoDb"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model ScannableWallet {
+  id            String @id @default(auto()) @map("_id") @db.ObjectId
+  walletName    String
+  walletIcon    String
+  walletLogo    String
+  walletWebsite String
+  apiDocLink    String
+  date          String
+  timestamp     BigInt
+  other_data    Json
+}
