@@ -6,10 +6,10 @@ export let dbClient: mongodb.MongoClient;
 export let wallet_db: mongodb.Db;
 export let wallet_dbClient: mongodb.MongoClient;
 
-const CAFile = "./DigitalOcean-db-ca-certificate.crt";
 
-const dbConfig = "mongodb://mani:QzKgj9WoUrHmCCnh@20.87.215.117:27017/";
-const wallet_dbConfig = "mongodb+srv://mani:605r2lSMNH1Yp987@db-mongodb-nyc1-33456-103c8813.mongo.ondigitalocean.com/admin?authSource=admin&replicaSet=db-mongodb-nyc1-33456&tls=true&tlsCAFile="+CAFile;
+
+const dbConfig = "mongodb://username:password@host:27017/";
+const wallet_dbConfig = "mongodb://username:password@host:27017";
 
 const connectDB = async () => {
   return new Promise(function (resolve) {
