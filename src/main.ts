@@ -1,5 +1,6 @@
 import { NestFactory } from "@nestjs/core";
 import helmet from "helmet";
+import * as xss from 'xss-clean';
 import * as logger from "morgan";
 // import * as csurf from "csurf";
 import { StartUpCon } from "./dbconnection";
@@ -17,6 +18,7 @@ async function bootstrap() {
   );
   app.useGlobalFilters(new AllExceptionFilter());
   app.use(helmet());
+  app.use(xss());
   app.use(logger('dev'));
   app.enableCors();
   // app.use(csurf());
